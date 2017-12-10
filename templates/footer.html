@@ -1,0 +1,11 @@
+<!--footer.html-->
+
+
+{#if now 的作用是判断now变量是否有内容#}
+{% block footer %}
+    {% if now %}
+        <p style="font-family: 'Microsoft YaHei'">现在时刻：{{ now }}</p>
+    {% else %}
+        <p style="font-family: 'Microsoft YaHei';">本内容选取自网络，如有侵权请联系下架</p>
+    {% endif %}
+{% endblock %}
