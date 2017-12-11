@@ -16,17 +16,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from mainsite.views import homepage,showpost,current_datetime
-
+from django.views.generic import TemplateView
 from django.conf.urls import url,include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', homepage),
-#把post/开头的网址后面的字符串都找出来。
-    url(r'^post/(\w+)$', showpost),
-    url(r'^current_datetime',current_datetime),
-
+    url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^mainsite/', include('mainsite.urls'))
 
 ]

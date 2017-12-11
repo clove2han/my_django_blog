@@ -32,9 +32,9 @@ def showpost(request,slug):
 
 def current_datetime(request):
     nowtime = datetime.now()
-    # t =   Template("<html><body>It is now {{ current_datetime   }}.</body></html>")
-    # html = t.render(Context({'current_datetime':nowtime}))
     return render_to_response('current_datetime.html',{'current_datetime':nowtime})
+
+
 @csrf_exempt
 def moments_input(request):
 
@@ -45,9 +45,7 @@ def moments_input(request):
             moment = form.save()
             moment.save()
 
-            return HttpResponseRedirect(reverse('welcome'))   #这里的名称是url name
+            return HttpResponseRedirect(reverse('current_datetime'))   #这里的名称是url name
     else:
         form = MomentForm()
-    # form = MomentForm()
-    PROJECT_ROOT =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    return render(request,os.path.join(PROJECT_ROOT,'mainsite/templates','input.html'),{'form':form})
+    return render_to_response('input.html', {'form':form})
