@@ -15,20 +15,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
-from mainsite.views import homepage,showpost,current_datetime
-
-from django.conf.urls import url,include
-
+from mainsite.views import homepage,showpost,current_datetime,moments_input
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage),
 #把post/开头的网址后面的字符串都找出来。
     url(r'^post/(\w+)$', showpost),
     url(r'^current_datetime',current_datetime),
-
-    url(r'^mainsite/', include('mainsite.urls'))
+    url(r'^input', moments_input),
 
 ]
-
-
