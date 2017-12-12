@@ -24,6 +24,10 @@ urlpatterns = [
 #把post/开头的网址后面的字符串都找出来。
     url(r'^post/(\w+)$', showpost),
     url(r'^current_datetime',current_datetime,name='current_datetime'),
+<<<<<<< HEAD
     url(r'^input', moments_input,name='input'),
+=======
+    url(r'^input', moments_input),
+>>>>>>> df0fe6087536def7f4d6cf2b3b4b4aa95334a169
 
 ]

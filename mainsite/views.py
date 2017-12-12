@@ -48,4 +48,10 @@ def moments_input(request):
             return HttpResponseRedirect(reverse('current_datetime'))   #这里的名称是url name
     else:
         form = MomentForm()
+<<<<<<< HEAD
     return render_to_response('input.html', {'form':form})
+=======
+    # form = MomentForm()
+    PROJECT_ROOT =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    return render_to_response('input.html',{'form':form})
+>>>>>>> df0fe6087536def7f4d6cf2b3b4b4aa95334a169
