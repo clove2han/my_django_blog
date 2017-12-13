@@ -24,8 +24,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', homepage),
 #把post/开头的网址后面的字符串都找出来。
-    url(r'^post/(\w+)$', showpost),
-    url(r'^current_datetime',current_datetime),
 
     url(r'^mainsite/', include('mainsite.urls'))
 
