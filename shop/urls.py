@@ -15,22 +15,10 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from mainsite.views import homepage
-from django.conf import settings
-from django.conf.urls.static import static
-
-from django.conf.urls import url,include
-
+from django.conf.urls import url
+from . import views
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', homepage),
-#把post/开头的网址后面的字符串都找出来。
-
-    url(r'^mainsite/', include('mainsite.urls')),
-    url(r'^myshop/', include('shop.urls',namespace='shop'))
-
+    url(r'^$', views.product_list, name = 'product_list'),
+        url(r'^(?P<category_slug>[-\w]+)/$',views.product_list, name = 'product_list_by_category'),
+    url(r'^(?P<id>\d+)/(?P<slug>[-\w]+)/$',views.product_detail,name='product_detail'),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)

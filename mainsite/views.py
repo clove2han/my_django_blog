@@ -1,6 +1,6 @@
 #_*_coding:utf-8_*_
 
-from django.shortcuts import render,render_to_response
+from django.shortcuts import render,render_to_response,get_object_or_404
 from django.core.urlresolvers import reverse
 from django.http import  HttpResponse,HttpResponseRedirect
 from models import Post
@@ -10,6 +10,7 @@ from django.shortcuts import redirect
 from forms import MomentForm
 import os
 from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 
@@ -51,3 +52,5 @@ def moments_input(request):
     # form = MomentForm()
     PROJECT_ROOT =  os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     return render_to_response('input.html',{'form':form})
+
+
