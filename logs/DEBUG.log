@@ -1,0 +1,13 @@
+2017-12-15 21:48:56,427 [Thread-22:17504] [django.request:135] [exception:handle_uncaught_exception] [ERROR]- Internal Server Error: /mainsite/
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\django\core\handlers\exception.py", line 41, in inner
+    response = get_response(request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "C:\Python27\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\workspace\my_django_blog-master\mainsite\views.py", line 19, in homepage
+    template = get_template('mainsite/index.html')
+  File "C:\Python27\lib\site-packages\django\template\loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+TemplateDoesNotExist: mainsite/index.html

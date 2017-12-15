@@ -1,7 +1,6 @@
 #_*_coding:utf-8_*_
 from __future__ import unicode_literals
 from django.db import models
-from django.utils import timezone
 from django.core.urlresolvers import reverse
 # Create your models here.
 
