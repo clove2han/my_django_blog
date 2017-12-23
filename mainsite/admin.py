@@ -1,7 +1,7 @@
 #_*_coding:utf-8_*_
 
 from django.contrib import admin
-from .models import Post,Category,Product
+from .models import Post
 # Register your models here.
 
 class PostAdmin(admin.ModelAdmin):

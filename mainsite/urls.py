@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^post/(\w+)$', views.showpost),
     url(r'^current_datetime',views.current_datetime,name='current_datetime'),
     url(r'^input', views.moments_input,name='input'),
+    url(r'^lottery', views.lottery,name='lottery'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

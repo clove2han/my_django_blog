@@ -1,0 +1,25 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'mainsite/css/lottery.css' %}">
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="one"><p class="num">{{ c.0}}</p></div>
+<div id="two"><p class="num">{{ c.1 }}</p></div>
+<div id="three"><p class="num">{{ c.2 }}</p></div>
+</body>
+</html>
+
+<script language="JavaScript">
+function myrefresh(){
+window.location.reload();
+}
+setTimeout('myrefresh()',500); //指定1秒刷新一次
+</script>

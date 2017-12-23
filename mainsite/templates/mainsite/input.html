@@ -1,6 +1,8 @@
+{% load staticfiles %}
 <html lang="en">
 <head>
-    <link type="text/css" rel="stylesheet" href="static/css/common.css" />
+    <link rel="stylesheet" href="{% static 'mainsite/css/input.css' %}">
+
     <meta charset="UTF-8">
     <title>消息录入界面</title>
 </head>
@@ -10,7 +12,7 @@
             <legend>请输入并提交</legend>
                 {% csrf_token %}
                 {{ form.as_p }}
-            <input type="submit" value="提交" />
+            <input type="submit" value="提交"  id="submit"/>
         </fieldset>
     </form>
 

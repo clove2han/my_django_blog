@@ -10,7 +10,7 @@ from django.shortcuts import redirect
 from forms import MomentForm
 import os
 from django.views.decorators.csrf import csrf_exempt
-
+import random
 
 # Create your views here.
 
@@ -56,3 +56,9 @@ def moments_input(request):
     # form = MomentForm()
     PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     return render_to_response('mainsite/input.html', {'form': form})
+
+def lottery(request):
+    a = 0
+    b = 100
+    c = [random.randint(a, b) for _ in range(3)]
+    return render_to_response('mainsite/lottery.html',{"c":c})
